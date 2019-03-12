@@ -1,0 +1,23 @@
+{
+  "name": "winston-amqp-graylog",
+  "version": "1.0.0",
+  "description": "Winston Amqp Graylog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "winston"
+  ],
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.13.0"
+  },
+  "author": "bpicori",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "winston-transport": "^4.3.0"
+  }
+}
