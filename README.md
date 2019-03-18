@@ -17,12 +17,30 @@ const AmqpTransport = require('winston-amqp-graylog');
 
 const logger = new winston.Logger({
     transports: [
-      new AmqpTransport({
-        rabbitUri: uri,
-        queue,
-        level: logLevel,
-      })
+      new AmqpTransport(options)
     ],
     exitOnError: false, // do not exit on handled exceptions
   });
 ```
+
+### Options
+* **rabbitUri:** RabbitMQ url
+* **queue:** RabbitMQ queue to process log
+* **hostname:** The name of the host (default: os.hostname())
+* **level:** Level of the message to send to Graylog
+
+
+### Log Levels
+
+Winston Level | Graylog2 level
+---------------|---------------
+emerg          | emergency
+alert          | alert
+crit           | critical
+error          | error
+warning        | warning
+warn           | warning
+notice         | notice
+info           | info
+debug          | debug
+
