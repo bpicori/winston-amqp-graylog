@@ -1,23 +1,44 @@
 {
   "name": "winston-amqp-graylog",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Winston Amqp Graylog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node --inspect=0.0.0.0:5858 ./lib/main.js",
+    "dev": "nodemon",
+    "build": "./node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build:watch": "./node_modules/typescript/bin/tsc -w -p tsconfig.json",
+    "test": "./node_modules/mocha/bin/mocha --require ts-node/register test/**/*.ts",
+    "clean": "./node_modules/rimraf/bin.js bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpicori/winston-amqp-graylog.git"
   },
   "keywords": [
-    "winston"
+    "winston",
+    "amqp",
+    "graylog"
   ],
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.13.0"
+    "@types/amqplib": "^0.5.13",
+    "@types/hapi": "^18.0.3",
+    "@types/moment-timezone": "^0.5.12",
+    "@types/node": "^12.12.3",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^1.19.4",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.16.0",
+    "typescript": "^3.6.4"
   },
   "author": "bpicori",
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.5.3",
+    "winston": "^3.2.1",
     "winston-transport": "^4.3.0"
   }
 }

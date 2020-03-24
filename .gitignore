@@ -3,3 +3,4 @@ node_modules/
 .vscode
 test_report/
 coverage/
+lib/

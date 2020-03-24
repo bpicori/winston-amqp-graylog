@@ -1,22 +1,18 @@
 module.exports = {
-  "extends": "airbnb-base",
-  "env": {
-    "node": true,
-    "mocha": true
+  extends: ['airbnb-typescript/base'],
+  parserOptions: {
+    project: './tsconfig.json',
   },
-  "rules": {
-     "max-len": "off",
-     "class-methods-use-this": "off",
-     "no-underscore-dangle": "off",
-     "arrow-body-style": "off",
-     "func-names": "off",
-     "import/no-dynamic-require": "off",
-     "global-require": "off",
-     "no-shadow": "off",
-     "no-param-reassign": "off",
-     "object-curly-newline": "off",
-     "no-console": "off",
-     "camelcase": "off",
-     "no-await-in-loop": "off"
+  rules: {
+    "import/prefer-default-export": "off",
+    "max-len": "off",
+    "no-restricted-syntax": "off",
+    "import/no-duplicates": "off",
+    "no-param-reassign":"off",
+    "@typescript-eslint/no-throw-literal": "off",
+    "class-methods-use-this": "off",
+    "no-await-in-loop": "off",
+    "max-classes-per-file": "off",
+    "@typescript-eslint/camelcase": "off"
   }
 };
